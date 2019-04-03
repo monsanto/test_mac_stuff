@@ -3,7 +3,7 @@ import os
 
 os.mkdir("test", 0o333)
 
-fd = os.open("test", 0x8000)
+fd = os.open("test", os.O_WRONLY | 0x8000) # worth a shot
 # fd = os.open("test", os.O_DIRECTORY | os.O_PATH)
 
 fd2 = os.open("file", os.O_CREAT|os.O_WRONLY, dir_fd=fd)
