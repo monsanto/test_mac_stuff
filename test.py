@@ -19,3 +19,7 @@ os.rename("test", "test2")
 fd2 = os.open(path + "file", os.O_RDONLY)
 print(os.read(fd2, 100))
 os.close(fd2)
+
+fd2 = os.open("test2/file", os.O_RDONLY)
+print(os.read(fd2, 100))
+os.close(fd2)
