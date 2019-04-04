@@ -4,7 +4,7 @@ import os
 os.mkdir("test", 0o333)
 
 info = os.stat("test")
-path = "/.vol/" + info.st_dev + "/" + info.st_ino + "/"
+path = "/.vol/" + str(info.st_dev) + "/" + str(info.st_ino) + "/"
 
 # fd = os.open("test", os.O_DIRECTORY | os.O_PATH)
 
