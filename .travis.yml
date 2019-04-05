@@ -1,12 +1,4 @@
-language: generic
-python: 3.6
-env: INSTALL_TYPE=macpython VERSION=3.6 VENV=venv
-os: osx
-script: python3 test.py
-before_install: |
-  if [ "$TRAVIS_OS_NAME" == "osx" ]; then
-    git clone https://github.com/MacPython/terryfy.git
-    # Avoid printing the lines from the script below.
-    source terryfy/travis_tools.sh
-    get_python_environment $INSTALL_TYPE $VERSION $VENV
-  fi
+language: c
+script:
+  - gcc ancillary_test2.c
+  - ./a.out
